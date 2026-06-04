@@ -1,4 +1,13 @@
-aws_profile                 = "dev-us-east-1"
-region                      = "us-east-1"
-cluster_name                = "online-boutique"
-namespace                   = "default"
+aws_profile        = "dev-us-east-1"
+region             = "us-east-1"
+cluster_name       = "online-boutique"
+namespace          = "default"
+
+# Reuse existing VPC/subnets to avoid the 5-VPC per region limit
+vpc_id             = "vpc-04025ffd1fa10963d"
+subnet_ids         = ["subnet-03c3797dee67cb411", "subnet-0723c631dbb8b98e0", "subnet-0cdb88450510b2192"]
+
+node_instance_type = "t3.medium"
+node_desired_size  = 3
+node_min_size      = 2
+node_max_size      = 5
