@@ -1,0 +1,4 @@
+aws_profile                 = "dev-us-east-1"
+region                      = "us-east-1"
+cluster_name                = "online-boutique"
+namespace                   = "default"
