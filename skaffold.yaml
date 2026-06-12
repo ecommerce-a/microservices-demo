@@ -92,6 +92,16 @@ profiles:
   - op: add
     path: /manifests/kustomize/paths/1
     value: kustomize/components/network-policies
+# "eks" profile targets Amazon EKS. Use with --default-repo pointing at your ECR registry:
+#     skaffold run -p eks --default-repo=<account>.dkr.ecr.<region>.amazonaws.com
+- name: eks
+  manifests:
+    kustomize:
+      paths:
+      - kustomize/overlays/eks
+  patches:
+  - op: remove
+    path: /build/artifacts/3
 ---
 apiVersion: skaffold/v3
 kind: Config
